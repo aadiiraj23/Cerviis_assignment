@@ -1,32 +1,42 @@
 import React from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import TopNav from './components/TopNav'
 import SideNav from './components/SideNav'
-import Dashboard from './Dashboard'
+import MobileBottomNav from './components/MobileBottomNav'
+import TeamPage from './pages/TeamPage'
+import ProjectsPage from './pages/ProjectsPage'
+import ResourcesPage from './pages/ResourcesPage'
+import DocsPage from './pages/DocsPage'
+import AnalyticsPage from './pages/AnalyticsPage'
+import SettingsPage from './pages/SettingsPage'
+import ProfilePage from './pages/ProfilePage'
 
 export default function App(){
   return (
-    <div className="bg-background text-on-surface">
-      <TopNav />
-      <SideNav />
-      
-      {/* Main Canvas */}
-      <main className="md:ml-64 pt-24 pb-12 px-8">
-        {/* Perspective Header */}
-        <header className="mb-12 perspective-header">
-          <h1 className="text-5xl font-extrabold tracking-tighter text-on-surface mb-2 font-headline">Optimized performance.</h1>
-          <p className="text-on-surface-variant text-lg max-w-2xl font-body">Architecture meets high-performance engineering. Monitor your workspace metrics with surgical precision.</p>
-        </header>
+    <BrowserRouter>
+      <div className="bg-background text-on-surface min-h-screen">
+        <TopNav />
+        <SideNav />
 
-        {/* Performance Analytics Bento Grid */}
-        <Dashboard />
-      </main>
+        <Routes>
+          <Route path="/" element={<Navigate to="/analytics" replace />} />
+          <Route path="/team" element={<TeamPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/docs" element={<DocsPage />} />
+          <Route path="/analytics" element={<AnalyticsPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
 
-      {/* Contextual FAB */}
-      <div className="fixed bottom-8 right-8">
-        <button className="w-14 h-14 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
-          <span className="material-symbols-outlined group-hover:rotate-90 transition-transform">add</span>
-        </button>
+        <div className="fixed bottom-24 right-6 hidden md:block">
+          <button className="w-14 h-14 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-[0_12px_32px_rgba(0,81,176,0.3)] flex items-center justify-center active:scale-95 transition-transform z-40">
+            <span className="material-symbols-outlined text-2xl">add</span>
+          </button>
+        </div>
+
+        <MobileBottomNav />
       </div>
-    </div>
+    </BrowserRouter>
   )
 }

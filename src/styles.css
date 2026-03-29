@@ -21,6 +21,23 @@ body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",
 .item h3{margin:0 0 8px;font-size:15px}
 .item p{margin:0;color:var(--muted);font-size:13px}
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.blue-gradient-cta {
+  background: linear-gradient(135deg, #0051b0 0%, #0f69dc 100%);
+}
+
+.ghost-border {
+  outline: 1px solid rgba(195, 198, 215, 0.15);
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;
