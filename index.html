@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architect | Optimized Performance Dashboard</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "error-container": "#fe8983",
+            "primary": "#515f74",
+            "on-secondary": "#f7f9ff",
+            "on-secondary-container": "#435368",
+            "primary-dim": "#455368",
+            "inverse-primary": "#d5e3fd",
+            "secondary-dim": "#44546a",
+            "primary-container": "#d5e3fd",
+            "surface-variant": "#e4e2e5",
+            "inverse-on-surface": "#9e9c9d",
+            "tertiary-container": "#34b5fa",
+            "secondary-container": "#d3e4fe",
+            "on-tertiary-fixed-variant": "#003954",
+            "on-tertiary-container": "#003047",
+            "tertiary-fixed-dim": "#17a8ec",
+            "primary-fixed-dim": "#c7d5ee",
+            "surface-dim": "#dbd9dd",
+            "on-secondary-fixed-variant": "#4d5d73",
+            "secondary-fixed-dim": "#c5d6f0",
+            "error-dim": "#4e0309",
+            "on-primary": "#f6f7ff",
+            "primary-fixed": "#d5e3fd",
+            "surface-container-highest": "#e4e2e5",
+            "on-surface-variant": "#5f5f61",
+            "on-tertiary-fixed": "#00121e",
+            "secondary": "#506076",
+            "on-primary-container": "#455367",
+            "on-error-container": "#752121",
+            "outline-variant": "#b3b1b4",
+            "on-error": "#fff7f6",
+            "on-tertiary": "#f5f9ff",
+            "on-primary-fixed": "#324054",
+            "inverse-surface": "#0e0e0f",
+            "surface-bright": "#fcf8f9",
+            "on-secondary-fixed": "#314055",
+            "surface-tint": "#515f74",
+            "on-surface": "#323235",
+            "tertiary": "#006592",
+            "on-background": "#323235",
+            "error": "#9f403d",
+            "tertiary-fixed": "#34b5fa",
+            "surface-container-low": "#f6f3f4",
+            "tertiary-dim": "#005980",
+            "on-primary-fixed-variant": "#4e5c71",
+            "surface-container-lowest": "#ffffff",
+            "background": "#fcf8f9",
+            "surface-container": "#f0edef",
+            "surface": "#fcf8f9",
+            "surface-container-high": "#eae7ea",
+            "outline": "#7b7a7d",
+            "secondary-fixed": "#d3e4fe"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .perspective-header { transform: translateX(-5%); }
+  </style>
+</head>
+<body class="bg-background text-on-surface">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
