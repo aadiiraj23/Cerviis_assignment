@@ -1,33 +1,41 @@
-# Architect | Optimized Performance Dashboard
+# Architect | Multi-Page Frontend (React + Vite)
 
-A premium React + Vite dashboard featuring real-time data sync, live countdown timer, and optimized performance metrics. Built with Tailwind CSS and Material Design icons.
+A premium multi-page React + Vite frontend with routed sections for Team, Projects, Resources, Docs, Analytics, Settings, and Profile. Built with Tailwind CSS tokens and Material Symbols.
 
-🔗 **[Live Demo](https://cerviis-assignment.vercel.app/)**
+## What Is Implemented
 
-## Features
+- Client-side routing with `react-router-dom`
+- Dedicated pages for:
+	- `/analytics` (default homepage)
+	- `/team`
+	- `/projects`
+	- `/resources`
+	- `/docs`
+	- `/settings`
+	- `/profile`
+- Responsive navigation:
+	- Top app bar actions (notifications, settings, profile)
+	- Desktop sidebar navigation
+	- Mobile bottom tab navigation
+- Profile linking integrated from multiple entry points:
+	- Sidebar profile tile
+	- Top-right avatar
+	- Team lead card (Marcus Chen)
+	- Settings profile card shortcut
 
-✨ **Real-time Data Sync**
-- Auto-fetches user data from JSONPlaceholder API every 60 seconds
-- Live countdown timer that resets after each successful sync
-- Manual refresh button for immediate updates
+## Analytics Module
 
-⚡ **Performance Optimized**
-- Proper cleanup with AbortController to prevent memory leaks
-- setInterval management with clearInterval in cleanup function
-- Efficient state updates and re-renders
+The Analytics page contains the real-time dashboard module with:
 
-🎨 **Premium UI**
-- Clean, well-structured component architecture
-- Responsive Bento grid layout
-- Tailwind CSS with custom color scheme
-- Material Design icons throughout
-- Smooth animations and transitions
+- Auto-refresh every 60 seconds
+- Live countdown timer
+- Manual refresh button
+- AbortController cleanup for in-flight fetches
+- Simulated system stat refresh (latency, CPU, memory)
 
-📊 **Dashboard Sections**
-- Performance Analytics with live data list
-- System Status monitoring (Uptime, Latency, CPU, Memory)
-- Project Progress tracking
-- Insights & Notifications
+Data source used for demo data:
+
+- `https://jsonplaceholder.typicode.com/users`
 
 ## Quick Start
 
@@ -36,40 +44,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:5173 in your browser.
-
-## Architecture
-
-```
-src/
-├── App.jsx                    # Main app component with layout
-├── Dashboard.jsx              # Real-time data sync component
-├── components/
-│   ├── TopNav.jsx            # Top navigation bar
-│   ├── SideNav.jsx           # Side navigation sidebar
-│   ├── ProjectCards.jsx      # Project progress cards
-│   └── InsightCards.jsx      # Insights & notifications
-├── main.jsx                   # React entry point
-└── styles.css                 # Global styles & scrollbar
-```
-
-## Implementation Details
-
-### Real-time Data Fetching
-- Uses `AbortController` to cancel in-flight requests when component unmounts
-- Fetches from JSONPlaceholder `/users` endpoint
-- Updates system stats with simulated metrics on each sync
-
-### Auto-Refresh Mechanism
-- 60-second interval with `setInterval`
-- Countdown timer updates every 1 second
-- Properly cleaned up in useEffect return function
-
-### State Management
-- `items`: User data from API
-- `countdown`: Seconds until next update
-- `systemStats`: Simulated latency, CPU, memory metrics
-- `loading` & `error`: Request state tracking
+Open `http://localhost:5173`.
 
 ## Build
 
@@ -77,9 +52,34 @@ src/
 npm run build
 ```
 
-Outputs optimized production build to `dist/`
+Production output is generated in `dist/`.
 
----
+## Project Structure
 
-**Deadline:** March 30, 1:00 PM (IST)
+```text
+src/
+	App.jsx
+	Dashboard.jsx
+	main.jsx
+	styles.css
+	components/
+		MobileBottomNav.jsx
+		SideNav.jsx
+		TopNav.jsx
+		InsightCards.jsx
+		ProjectCards.jsx
+	pages/
+		AnalyticsPage.jsx
+		DocsPage.jsx
+		ProfilePage.jsx
+		ProjectsPage.jsx
+		ResourcesPage.jsx
+		SettingsPage.jsx
+		TeamPage.jsx
+```
+
+## Notes
+
+- Homepage route is configured to redirect from `/` to `/analytics`.
+- Sidebar and mobile bottom tabs are the primary page navigation surfaces.
 
