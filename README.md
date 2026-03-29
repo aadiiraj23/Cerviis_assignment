@@ -2,6 +2,8 @@
 
 A premium React + Vite dashboard featuring real-time data sync, live countdown timer, and optimized performance metrics. Built with Tailwind CSS and Material Design icons.
 
+🔗 **[Live Demo](https://cerviis-assignment.vercel.app/)**
+
 ## Features
 
 ✨ **Real-time Data Sync**
